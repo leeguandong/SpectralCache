@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Results and outputs
+results/
+outputs/
+*.png
+*.jpg
+*.jpeg
+!paper/qual_comparison/*.png
+!assets/*.png
+*.mp4
+*.gif
+
+# Logs
+*.log
+logs/
+
+# Model checkpoints
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Data
+data/
+datasets/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+!paper/*.pdf
+
+# Experiment results
+*_results/
+ablation_results/
+error_analysis_results/
+quality_eval_results*/
+spectral_sweep_results*/
+main_comparison_results/

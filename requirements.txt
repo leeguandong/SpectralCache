@@ -1,0 +1,41 @@
+# SpectralCache Requirements
+
+# Core dependencies
+torch>=2.1.0
+diffusers>=0.31.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# xFuser (FastCache-xDiT)
+# Install from source or PyPI
+# pip install xfuser
+
+# Image processing
+Pillow>=9.0.0
+opencv-python>=4.5.0
+
+# Metrics
+lpips>=0.1.4
+scikit-image>=0.19.0
+torchmetrics>=0.11.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+
+# Utilities
+numpy>=1.21.0
+scipy>=1.7.0
+tqdm>=4.62.0
+pyyaml>=6.0
+
+# Optional: Flash Attention (for ring_degree > 1)
+# flash-attn>=2.6.0
+
+# Optional: Quantization
+# optimum-quanto
+
+# Development
+pytest>=7.0.0
+black>=24.2.0
+pre-commit>=3.0.0

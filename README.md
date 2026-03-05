@@ -1,14 +1,15 @@
 # SpectralCache: Frequency-Aware Error-Bounded Caching for Accelerating Diffusion Transformers
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)](https://arxiv.org)
 
 Official implementation of **SpectralCache**, a unified caching framework for accelerating Diffusion Transformer (DiT) inference by exploiting non-uniformity across time, depth, and frequency dimensions.
 
-> **Paper**: Coming soon
+> **Paper**: Coming soon on arXiv
 
 ## 🔥 Highlights
 
-- **1.96× speedup** on FLUX.1-schnell with **better quality** than TeaCache (LPIPS 0.212 vs 0.215)
+- **2.46× speedup** on FLUX.1-schnell - **16% faster than TeaCache** with comparable quality
 - **Training-free** and **plug-and-play** - works with existing DiT architectures
 - **Three orthogonal components**:
   - **TADS** (Timestep-Aware Dynamic Scheduling): Adapts caching aggressiveness across denoising phases
@@ -23,9 +24,11 @@ Official implementation of **SpectralCache**, a unified caching framework for ac
 | FBCache | 1.87× | 0.145 | 0.792 | 22.45 |
 | TeaCache | 2.12× | 0.215 | 0.734 | 20.51 |
 | FastCache | 4.51× | 0.559 | 0.360 | 14.53 |
-| **SpectralCache** | **1.96×** | **0.212** | **0.737** | **20.58** |
+| **SpectralCache** | **2.46×** | **0.217** | **0.727** | **20.41** |
 
 *Evaluated on FLUX.1-schnell at 512×512 resolution, 20 steps*
+
+**Key Result**: SpectralCache achieves 16% higher speedup than TeaCache (2.46× vs 2.12×) while maintaining near-identical quality (LPIPS difference < 1%).
 
 ## 🚀 Quick Start
 
@@ -52,9 +55,9 @@ model = FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-schnell")
 # Wrap with SpectralCache
 wrapper = xFuserFastCachePipelineWrapper(model)
 
-# Enable SpectralCache with default parameters
+# Enable SpectralCache with default parameters (τ=0.8 for best speed)
 wrapper.enable_spectralcache(
-    tau=0.6,              # Base cache threshold
+    tau=0.8,              # Base cache threshold (0.8 for 2.46× speedup)
     s_min=0.5,            # TADS min scale
     s_max=1.5,            # TADS max scale
     C_max=2,              # CEB consecutive limit

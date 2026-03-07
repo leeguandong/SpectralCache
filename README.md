@@ -5,7 +5,7 @@
 
 Official implementation of **SpectralCache**, a unified caching framework for accelerating Diffusion Transformer (DiT) inference by exploiting non-uniformity across time, depth, and frequency dimensions.
 
-> **Paper**: Coming soon on arXiv
+> **Paper**: [SpectralCache](https://arxiv.org/html/2603.05315v1)
 
 ## 🔥 Highlights
 

@@ -1,7 +1,6 @@
 # SpectralCache: Frequency-Aware Error-Bounded Caching for Accelerating Diffusion Transformers
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![arXiv](https://img.shields.io/badge/arXiv-Coming%20Soon-b31b1b.svg)](https://arxiv.org)
 
 Official implementation of **SpectralCache**, a unified caching framework for accelerating Diffusion Transformer (DiT) inference by exploiting non-uniformity across time, depth, and frequency dimensions.
 
